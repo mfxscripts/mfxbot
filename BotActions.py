@@ -19,7 +19,7 @@ def status(s):
 
 def help(s):
 
-  s.post_shout("Voor alle commando's: https://github.com/mfxscripts/mfxbot/blob/master/README.md")
+  s.post_shout("Mijn handleiding kan je vinden op: https://github.com/mfxscripts/mfxbot")
 
 def tell_fortune(s):
   
