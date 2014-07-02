@@ -11,10 +11,15 @@ wolframalpha_appid = '9XRJAL-TXWW5ATQK8';
 
 ## Functions.
 def status(s):
+
   uptime = subprocess.check_output(['uptime'])
   temp = subprocess.check_output(['/home/p/bin/gettemp'])
   output = uptime.rstrip() + ', temperature: ' + temp
   s.post_shout(output)
+
+def help(s):
+
+  s.post_shout("Voor alle commando's: https://github.com/mfxscripts/mfxbot/blob/master/README.md")
 
 def tell_fortune(s):
   

@@ -48,6 +48,8 @@ def handle_shouts(q, s):
       BotActions.roll_d20(s,author)
     elif re.search(r'%status$', msg):
       BotActions.status(s)
+    elif re.search(r'%help$', msg):
+      BotActions.help(s)
 
     # This one is done, Sir.
     q.task_done()

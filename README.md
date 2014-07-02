@@ -9,3 +9,5 @@ Commando's:
 - %status: toont uptime, load averages en temperatuur.
 
 - %tetten: tetten he.
+
+- %help: toont een link naar deze pagina
