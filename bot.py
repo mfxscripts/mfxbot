@@ -38,17 +38,17 @@ def handle_shouts(q, s):
     #  BotActions.find_answer(s, question)
     #  #s.post_shout('ok :D')
 
-    if re.search(r'^%quote$', msg):
+    if re.search(r'^[%/]quote$', msg):
       BotActions.tell_fortune(s)
-    elif re.search(r'^%drwho$', msg):
+    elif re.search(r'^[%/]drwho$', msg):
       BotActions.drwho_quote(s)
-    elif re.search(r'^%tetten$', msg):
+    elif re.search(r'^[%/]tetten$', msg):
       BotActions.tetten(s)
-    elif re.search(r'%[dD]20$', msg):
+    elif re.search(r'[%/][dD]20$', msg):
       BotActions.roll_d20(s,author)
-    elif re.search(r'%status$', msg):
+    elif re.search(r'[%/]status$', msg):
       BotActions.status(s)
-    elif re.search(r'%help$', msg):
+    elif re.search(r'[%/]help$', msg):
       BotActions.help(s)
 
     # This one is done, Sir.

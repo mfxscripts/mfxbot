@@ -11,3 +11,5 @@ Commando's:
 - %tetten: tetten he.
 
 - %help: toont een link naar deze pagina
+
+ps: je kan ook / ipv % gebruiken, bijv. /help
