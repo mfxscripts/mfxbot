@@ -23,14 +23,21 @@ def help(s):
 
 def tell_fortune(s):
   
-  fortune = subprocess.check_output(['fortune', '-n', '250'])
+  fortune = subprocess.check_output(['fortune', '-n', '250', '-s', 'fortunes'])
+  fortune = fortune.replace('\n', ' ')
+  fortune = ' '.join(fortune.split())
+  s.post_shout(fortune)
+
+def tell_quote(s):
+
+  fortune = subprocess.check_output(['fortune', '-n', '250', '-s', 'literature'])
   fortune = fortune.replace('\n', ' ')
   fortune = ' '.join(fortune.split())
   s.post_shout(fortune)
 
 def drwho_quote(s):
   
-  quote = subprocess.check_output(['fortune', '-n', '250', 'drwho'])
+  quote = subprocess.check_output(['fortune', '-n', '250', '-s', 'drwho'])
   s.post_shout(quote)
 
 def tetten(s):
@@ -45,6 +52,7 @@ def tetten(s):
              'https://duckduckgo.com/?q=tetten',
              'TETTEN. TETTEN. TETTEN.',
              'Oh jaaa. Lekkere tetten.',
+             'http://i.imgur.com/KoKOUxM.gif',
              'Mijn systemen zoeken het net af voor NSFW tetten.',
              'Jij bent een tettenzot. Ik ben een tettenbot 8)'
             ]

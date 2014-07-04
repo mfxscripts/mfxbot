@@ -1,10 +1,12 @@
 Commando's:
 
+- %cookie: toont een fortune cookie.
+
 - %d20: rollt een d20 dobbelsteen. Je kan dit commando gebruiken op het einde van een zin. Bijv.: jongleren met mijn ballen %d20
 
 - %drwho: toont een willekeurige quote uit de tv-series Doctor Who.
 
-- %quote: toont een quote of andere nonsens uit de fortune database van Debian.
+- %quote: toont een quote (literature).
 
 - %status: toont uptime, load averages en temperatuur.
 
