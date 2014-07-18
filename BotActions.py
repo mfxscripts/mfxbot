@@ -12,7 +12,7 @@ wolframalpha_appid = '9XRJAL-TXWW5ATQK8';
 ## Functions.
 def status(s):
 
-  uptime = subprocess.check_output(['uptime'])
+  uptime = subprocess.check_output(['/usr/bin/uptime'])
   temp = subprocess.check_output(['/home/p/bin/gettemp'])
   output = uptime.rstrip() + ', temperature: ' + temp
   s.post_shout(output)
@@ -23,22 +23,25 @@ def help(s):
 
 def tell_fortune(s):
   
-  fortune = subprocess.check_output(['fortune', '-n', '250', '-s', 'fortunes'])
+  fortune = subprocess.check_output(['/usr/games/fortune', '-n', '240', '-s', 'fortunes'])
   fortune = fortune.replace('\n', ' ')
   fortune = ' '.join(fortune.split())
   s.post_shout(fortune)
+  #s.post_shout('cookie in je broek ja')
 
 def tell_quote(s):
 
-  fortune = subprocess.check_output(['fortune', '-n', '250', '-s', 'literature'])
+  fortune = subprocess.check_output(['/usr/games/fortune', '-n', '240', '-s', 'literature'])
   fortune = fortune.replace('\n', ' ')
   fortune = ' '.join(fortune.split())
   s.post_shout(fortune)
+  #s.post_shout('ventje, steek je quote wor da de zunne nie schijnt..')
 
 def drwho_quote(s):
   
-  quote = subprocess.check_output(['fortune', '-n', '250', '-s', 'drwho'])
+  quote = subprocess.check_output(['/usr/games/fortune', '-n', '240', '-s', 'drwho'])
   s.post_shout(quote)
+  #s.post_shout('Doctor Who? Doctor ME!')
 
 def tetten(s):
   replies = [
@@ -76,7 +79,7 @@ def find_answer(s, question):
   if len(r.pods) > 1:
     answer = r.pods[1].text
     answer = answer.replace('Wolfram|Alpha', 'MFxBot')
-    if 0 < len(answer) <= 250:
+    if 0 < len(answer) <= 240:
       s.post_shout(answer)
     else:
       s.post_shout('Ken der gin gedacht van :(')
