@@ -38,10 +38,12 @@ def handle_shouts(q, s):
     #  BotActions.find_answer(s, question)
     #  #s.post_shout('ok :D')
 
-    if re.search(r'^[%/]quote$', msg):
-      BotActions.tell_quote(s)
-    if re.search(r'^[%/]cookie$', msg):
-      BotActions.tell_fortune(s)
+    #if re.search(r'^[%/]quote$', msg):
+    #  BotActions.tell_quote(s)
+    #if re.search(r'^[%/]cookie$', msg):
+    #  BotActions.tell_fortune(s)
+    if re.search(r'^[%/](fokmenol|rpmemory|reminiscence)$', msg):
+      BotActions.rpg_quote(s)
     elif re.search(r'^[%/]drwho$', msg):
       BotActions.drwho_quote(s)
     elif re.search(r'[%/][dD]20$', msg):

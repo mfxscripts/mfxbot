@@ -57,7 +57,7 @@ class Session:
       ex.sc = r.status_code
       if ex.sc == 200:
         break
-      sleep(login_retry_time) # Wait x sec between attempts.
+      time.sleep(login_retry_time) # Wait x sec between attempts.
 
     if ex.sc == 200:
       j = r.json()
@@ -72,7 +72,12 @@ class Session:
     # Then get a page of shouts
     url = "http://mfx.shivtr.com/shouts.json?auth_token=" + self.auth_token + '&page=' + str(page)
     r = requests.get(url)
-    return r.json()
+    #print url
+    try:
+      return r.json()
+    except ValueError, ex:
+      print ex
+      return {}
 
   def post_shout(self, msg):
     # Always first check if we are still authenticated
@@ -114,18 +119,3 @@ class Session:
 def open_db():
   db = sqlite3.connect(database_path)
   return db
-
-def get_nickname(member_id):
-  # TODO: Maybe put in sqlite
-  nicknames = {
-               1295264: 'Steven',
-               116232: 'Miquel',
-               115136: 'Vince',
-               115141: 'Lander',
-               1136893: 'Klaas', 
-               1005674: 'Toine',
-               1257371: 'Lex',
-               1005509: 'Swimmy',
-               1113718: 'Laurent', 
-              }
-  return nicknames[member_id]

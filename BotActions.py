@@ -27,7 +27,6 @@ def tell_fortune(s):
   fortune = fortune.replace('\n', ' ')
   fortune = ' '.join(fortune.split())
   s.post_shout(fortune)
-  #s.post_shout('cookie in je broek ja')
 
 def tell_quote(s):
 
@@ -35,13 +34,16 @@ def tell_quote(s):
   fortune = fortune.replace('\n', ' ')
   fortune = ' '.join(fortune.split())
   s.post_shout(fortune)
-  #s.post_shout('ventje, steek je quote wor da de zunne nie schijnt..')
 
 def drwho_quote(s):
   
   quote = subprocess.check_output(['/usr/games/fortune', '-n', '240', '-s', 'drwho'])
   s.post_shout(quote)
-  #s.post_shout('Doctor Who? Doctor ME!')
+
+def rpg_quote(s):
+  
+  quote = subprocess.check_output(['/usr/games/fortune', '-n', '240', '-s', 'rpgtimez'])
+  s.post_shout(quote)
 
 def tetten(s):
   replies = [
