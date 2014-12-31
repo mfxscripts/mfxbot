@@ -1,44 +1,46 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
-# Import some necessary libraries.
-import socket, ssl, sys
+## Imports
+import sys
+import IRC
+import time
+import Queue
+import threading
+import re
 
-# Some basic variables used to configure the bot        
-server  = 'irc.rizon.net'
-port    = 9999
-channel = '#home-boyz'
-botnick = 'EvilDroid'
+## Vars
+version = '0.02a'
 
-def ping(): # This is our first function! It will respond to server Pings.
-  ircsock.send("PONG :pingis\n")  
+## Functions
 
-def sendmsg(chan , msg): # This is the send message function, it simply sends messages to the channel.
-  ircsock.send("PRIVMSG "+ chan +" :"+ msg +"\n") 
+## Main program
+def parse_irc_msgs(irc):
+  while True:
+    msg = irc.queue.get()
+    #print msg
+    if re.search(':Hello '+ irc.botnick, msg):
+      irc.sendmsg(irc.channel, 'Hello!')
+    # ..
+    irc.queue.task_done()
 
-def joinchan(chan): # This function is used to join channels.
-  ircsock.send("JOIN "+ chan +"\n")
+# Connect to IRC
+irc = IRC.Session()
 
-def hello(): # This function responds to a user that inputs "Hello Mybot"
-  ircsock.send("PRIVMSG "+ channel +" :Hello!\n")
+# Join default channel
+irc.join_channel(irc.channel)
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((server, port)) # Here we connect to the server
-ircsock = ssl.wrap_socket(s)
-ircsock.send("USER "+ botnick +" "+ botnick +" "+ botnick +" :I am a bot.\n") # user authentication
-ircsock.send("NICK "+ botnick +"\n") # here we actually assign the nick to the bot
+# Say something in default channel
+irc.sendmsg(irc.channel, 'EvilDroid version ' + version + ' now operational.')
+irc.sendmsg(irc.channel, 'Greetings, earthlings.') 
 
-joinchan(channel) # Join the channel using the functions we previously defined
+# Now start workers
+for _ in range(5):
+  worker = threading.Thread(target=parse_irc_msgs, args=(irc,))
+  worker.daemon = True
+  worker.start()
 
-while 1: # Be careful with these! it might send you to an infinite loop
-  ircmsg = ircsock.recv(2048) # receive data from the server
-  ircmsg = ircmsg.strip('\n\r') # removing any unnecessary linebreaks.
-  print(ircmsg) # Here we print what's coming from the server
-
-  if ircmsg.find(":Hello "+ botnick) != -1: # If we can find "Hello Mybot" it will call the function hello()
-    hello()
-
-  if ircmsg.find("PING :") != -1: # if the server pings us then we've got to respond!
-    ping()
+# Block until all tasks are done (never)
+irc.queue.join()
 
 ## EOF
 sys.exit(0)
