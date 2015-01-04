@@ -1,0 +1,70 @@
+nohup: ignoring input
+:irc.x2x.cc 439 * :Please wait while we process your connection.
+:irc.x2x.cc NOTICE AUTH :*** Looking up your hostname...
+:irc.x2x.cc NOTICE AUTH :*** Checking Ident
+:irc.x2x.cc NOTICE AUTH :*** Found your hostname
+:irc.x2x.cc NOTICE AUTH :*** No Ident response
+:irc.x2x.cc NOTICE EvilDroid :*** Connected securely via TLSv1.2 AES256-GCM-SHA384-256
+:irc.x2x.cc NOTICE EvilDroid :*** Your host is masked (Rizon-CA2FD00B.dsl.scarlet.be)
+:irc.x2x.cc 001 EvilDroid :Welcome to the Rizon Internet Relay Chat Network EvilDroid
+:irc.x2x.cc 002 EvilDroid :Your host is irc.x2x.cc, running version hybrid-7.2.3+plexus-3.1.0(20140807_0-543)
+:irc.x2x.cc 003 EvilDroid :This server was created Sep  9 2014 at 06:25:46
+:irc.x2x.cc 004 EvilDroid irc.x2x.cc hybrid-7.2.3+plexus-3.1.0(20140807_0-543) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+:irc.x2x.cc 005 EvilDroid CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+:irc.x2x.cc 005 EvilDroid CHANLIMIT=#:75 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz NAMESX UHNAMES AWAYLEN=160 FNC KNOCK ELIST=CMNTU SAFELIST EXCEPTS=e INVEX=I :are supported by this server
+:irc.x2x.cc 042 EvilDroid 39CAAPHMB :your unique ID
+:irc.x2x.cc 251 EvilDroid :There are 30 users and 24643 invisible on 17 servers
+:irc.x2x.cc 252 EvilDroid 63 :IRC Operators online
+:irc.x2x.cc 253 EvilDroid 5 :unknown connection(s)
+:irc.x2x.cc 254 EvilDroid 19994 :channels formed
+:irc.x2x.cc 255 EvilDroid :I have 24673 clients and 17 servers
+:irc.x2x.cc 265 EvilDroid 24673 29159 :Current local users 24673, max 29159
+:irc.x2x.cc 266 EvilDroid 24673 29159 :Current global users 24673, max 29159
+:irc.x2x.cc 375 EvilDroid :- irc.x2x.cc Message of the Day - 
+:irc.x2x.cc 372 EvilDroid :-          11oo                            
+:irc.x2x.cc 372 EvilDroid :- 
+:irc.x2x.cc 372 EvilDroid :- 88d888b. dP d888888b .d8888b. 88d888b. 
+:irc.x2x.cc 372 EvilDroid :- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+:irc.x2x.cc 372 EvilDroid :- 1188       88  .Y8P    88.  .88 88    88 
+:irc.x2x.cc 372 EvilDroid :- 11dP       dP d888888P `88888P' dP    dP
+:irc.x2x.cc 372 EvilDroid :- 
+:irc.x2x.cc 372 EvilDroid :- Rizon Chat Network -- http://rizon.net
+:irc.x2x.cc 372 EvilDroid :- 
+:irc.x2x.cc 372 EvilDroid :- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+:irc.x2x.cc 372 EvilDroid :- 
+:irc.x2x.cc 372 EvilDroid :- Rules:
+:irc.x2x.cc 372 EvilDroid :- o No spamming or flooding
+:irc.x2x.cc 372 EvilDroid :- o No clones or malicious bots
+:irc.x2x.cc 372 EvilDroid :- o No takeovers
+:irc.x2x.cc 372 EvilDroid :- o No distribution of child pornography
+:irc.x2x.cc 372 EvilDroid :- o Clients must respond to VERSION requests
+:irc.x2x.cc 372 EvilDroid :- o Rizon staff may disconnect clients for any or no reason
+:irc.x2x.cc 372 EvilDroid :- 
+:irc.x2x.cc 372 EvilDroid :- First steps:
+:irc.x2x.cc 372 EvilDroid :- o To register your nick: /msg NickServ HELP
+:irc.x2x.cc 372 EvilDroid :- o To register your channel: /msg ChanServ HELP
+:irc.x2x.cc 372 EvilDroid :- o To get a vHost: /msg HostServ HELP REQUEST
+:irc.x2x.cc 372 EvilDroid :- o For other help with Rizon: /join #help
+:irc.x2x.cc 372 EvilDroid :- 
+:irc.x2x.cc 372 EvilDroid :- Usage of this network is a privilege, not a right. Rizon is a
+:irc.x2x.cc 372 EvilDroid :- transit provider, therefore no person or entity involved with
+:irc.x2x.cc 372 EvilDroid :- *.rizon.net or irc.x2x.cc takes any responsibility for
+:irc.x2x.cc 372 EvilDroid :- users' actions. Absolutely no warranty is expressed or implied.
+:irc.x2x.cc 376 EvilDroid :End of /MOTD command.
+:EvilDroid!~ev@Rizon-CA2FD00B.dsl.scarlet.be MODE EvilDroid :+Six
+:peer!service@rizon.net NOTICE EvilDroid :For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.222). This scan will not harm your computer.
+:Global!service@rizon.net NOTICE EvilDroid :[Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+:Global!service@rizon.net NOTICE EvilDroid :[Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+:Global!service@rizon.net NOTICE EvilDroid :[Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+:NickServ!service@rizon.net NOTICE EvilDroid :This nickname is registered and protected. If it is your
+:NickServ!service@rizon.net NOTICE EvilDroid :nick, type /msg NickServ IDENTIFY password. Otherwise,
+:NickServ!service@rizon.net NOTICE EvilDroid :please choose a different nick.
+:py-ctcp!ctcp@ctcp-scanner.rizon.net PRIVMSG EvilDroid :VERSION
+:EvilDroid!~ev@Rizon-CA2FD00B.dsl.scarlet.be MODE EvilDroid :+r
+:NickServ!service@rizon.net NOTICE EvilDroid :Password accepted - you are now recognized.
+:HostServ!service@rizon.net NOTICE EvilDroid :Your vhost of l.droid is now activated.
+:EvilDroid!~ev@l.droid JOIN :#home-boyz
+:irc.x2x.cc 332 EvilDroid #home-boyz :Beste Wensen 2015 !!!!8
+:irc.x2x.cc 333 EvilDroid #home-boyz Cpt_Cholo!~CptCholo@Rizon-6509E7AA.dsl.scarlet.be 1420313187
+:irc.x2x.cc 353 EvilDroid @ #home-boyz :EvilDroid @Cpt-Cholo @praxy @hb2hbTwan %Internets %Quotes @TRiNiTY
+:irc.x2x.cc 366 EvilDroid #home-boyz :End of /NAMES list.

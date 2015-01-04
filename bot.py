@@ -8,6 +8,8 @@ import Queue
 import threading
 import time
 import re
+import zmq
+import json
 
 ## Vars
 shout_refresh = 5 # Secs before we check for new shouts
@@ -54,9 +56,21 @@ def handle_shouts(q, s):
       BotActions.help(s)
     elif re.search(r'tette', msg, re.IGNORECASE):
       BotActions.tetten(s)
+    else:
+      # Post on IRC
+      shoutbox_client(new_shout)
 
     # This one is done, Sir.
     q.task_done()
+
+def shoutbox_client(shout):
+  # Connect to ircbot which is listening for messages
+  context = zmq.Context()
+  socket = context.socket(zmq.REQ)
+  # todo: add exception
+  socket.connect('tcp://127.0.0.1:6000')
+  socket.send(json.dumps(shout).encode('utf-8'))
+  socket.close()
 
 ## Main program
 

@@ -40,8 +40,8 @@ class Session:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((self.server, self.port))
     ircsock = ssl.wrap_socket(s)
-    ircsock.send("USER "+ self.botnick +" "+ "ev" + \
-                 " "+ "la" +" :I am a bot.\n")
+    ircsock.send("USER ev ev ev" + \
+                 " :I am a bot.\n")
     ircsock.send("NICK "+ self.botnick +"\n")
     return ircsock
 
@@ -50,6 +50,7 @@ class Session:
     while True:
       ircmsg = self.ircsock.recv(2048)
       ircmsg = ircmsg.strip('\n\r')
+      print ircmsg
       #if ircmsg.find("PING :") != -1:
       if re.search(r'^PING :', ircmsg):
         # We handle PING replies here automatically
@@ -63,6 +64,9 @@ class Session:
 
   def pong(self):
     self.ircsock.send("PONG :pingis\n")
+
+  def identify_nickserv(self):
+    self.ircsock.send("PRIVMSG NickServ : IDENTIFY " + self.nickserv + "\n")
 
   def sendmsg(self,channel,msg):
     self.ircsock.send("PRIVMSG "+ channel +" :"+ msg +"\n")
