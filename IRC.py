@@ -50,7 +50,6 @@ class Session:
     while True:
       ircmsg = self.ircsock.recv(2048)
       ircmsg = ircmsg.strip('\n\r')
-      print ircmsg
       #if ircmsg.find("PING :") != -1:
       if re.search(r'^PING :', ircmsg):
         # We handle PING replies here automatically
