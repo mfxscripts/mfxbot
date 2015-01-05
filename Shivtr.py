@@ -102,18 +102,28 @@ class Session:
     # We stop looping once we found the last_shout.
     new_shouts = []
     j = self.get_shouts(1) # Get last 20 shouts
+    #print j
     for s in j['shouts']:
       if s['id'] == self.last_shout:
         break # exit for loop right away if no new shouts.
-      if s['member']['id'] != self.memberid:
+      #if s['member']['id'] != self.memberid:
+      if s['member_id'] != self.memberid:
         #print s['message']
-        new_shouts.append((s['id'], s['message'], s['member']['id'], s['member']['display_name']))
+        member_id = s['member_id']
+        member_name = self.get_member_name(j, member_id) # API change 05/01/2015
+        new_shouts.append((s['id'], s['message'], member_id, member_name))
     else:
       # 20 new shouts, something is wrong (probably deleted messages or first page grab since startup)
       new_shouts = []
 
     self.last_shout = j['shouts'][0]['id'] # Update with last found shout
     return new_shouts
+
+  def get_member_name(self, json, member_id):
+    for m in json['members']:
+      if m['id'] == member_id:
+        member_name = m['display_name']
+        return member_name
 
 ## Functions
 def open_db():
